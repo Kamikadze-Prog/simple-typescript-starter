@@ -4,12 +4,12 @@ interface BigObject {
   [a: string]: { cvalue: number | string | undefined | BigObject } | undefined;
 }
 
-function Summ(a: BigObject) {
+function Summ(a: BigObject): number {
   const x: number[] = Object.keys(a).map((k) => {
-    //console.log(a[k]);
     const elem = a[k];
     if (typeof elem?.cvalue === 'undefined') return 2021;
     if (typeof elem?.cvalue === 'string') return +elem.cvalue;
+    if (typeof elem?.cvalue === 'number') return elem.cvalue;
     if (typeof elem?.cvalue === 'object') return Summ(elem.cvalue);
     return elem?.cvalue;
   });

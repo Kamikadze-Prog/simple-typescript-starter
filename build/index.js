@@ -2,12 +2,13 @@
 console.log('Hello World');
 function Summ(a) {
     const x = Object.keys(a).map((k) => {
-        //console.log(a[k]);
         const elem = a[k];
         if (typeof (elem === null || elem === void 0 ? void 0 : elem.cvalue) === 'undefined')
             return 2021;
         if (typeof (elem === null || elem === void 0 ? void 0 : elem.cvalue) === 'string')
             return +elem.cvalue;
+        if (typeof (elem === null || elem === void 0 ? void 0 : elem.cvalue) === 'number')
+            return elem.cvalue;
         if (typeof (elem === null || elem === void 0 ? void 0 : elem.cvalue) === 'object')
             return Summ(elem.cvalue);
         return elem === null || elem === void 0 ? void 0 : elem.cvalue;
