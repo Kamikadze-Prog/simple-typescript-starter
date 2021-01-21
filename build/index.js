@@ -14,7 +14,7 @@ function Summ(a) {
     });
     let sum = 0;
     for (let i = 0; i < x.length; i++) {
-        sum += Number(x[i]);
+        sum += x[i];
     }
     return sum;
 }

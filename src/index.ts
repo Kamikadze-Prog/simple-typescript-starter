@@ -5,7 +5,7 @@ interface BigObject {
 }
 
 function Summ(a: BigObject) {
-  const x: (number | undefined)[] = Object.keys(a).map((k) => {
+  const x: number[] = Object.keys(a).map((k) => {
     //console.log(a[k]);
     const elem = a[k];
     if (typeof elem?.cvalue === 'undefined') return 2021;
@@ -16,7 +16,7 @@ function Summ(a: BigObject) {
 
   let sum = 0;
   for (let i = 0; i < x.length; i++) {
-    sum += Number(x[i]);
+    sum += x[i];
   }
   return sum;
 }
