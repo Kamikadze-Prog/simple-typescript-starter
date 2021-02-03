@@ -1,33 +1,31 @@
 interface BigObject {
     [a: string]: {
-        cvalue: number | string | undefined | BigObject;
+        cValue: number | string | undefined | BigObject;
     } | undefined;
 }
 declare function Summ(a: BigObject): number;
 declare const values: {
     h: {
-        cvalue: number;
+        cValue: number;
     };
     e: {
-        cvalue: number;
+        cValue: number;
     };
     L: {
-        cvalue: number;
+        cValue: number;
     };
     o: {
-        cvalue: string;
+        cValue: string;
     };
     world: {
-        cvalue: {
+        cValue: {
             yay: {
-                cvalue: string;
+                cValue: string;
             };
         };
     };
 };
-declare const undefindValue: {
-    o: {
-        cvalue: undefined;
-    };
+declare const undefinedValue: {
+    o: undefined;
 };
 //# sourceMappingURL=index.d.ts.map

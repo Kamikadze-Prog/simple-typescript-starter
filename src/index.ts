@@ -1,17 +1,16 @@
 console.log('Hello World');
 
 interface BigObject {
-  [a: string]: { cvalue: number | string | undefined | BigObject } | undefined;
+  [a: string]: { cValue: number | string | undefined | BigObject } | undefined;
 }
 
 function Summ(a: BigObject): number {
-  const x: number[] = Object.keys(a).map((k) => {
+  const x: number[] = Object.keys(a).map((k: string) => {
     const elem = a[k];
-    if (typeof elem?.cvalue === 'undefined') return 2021;
-    if (typeof elem?.cvalue === 'string') return +elem.cvalue;
-    if (typeof elem?.cvalue === 'number') return elem.cvalue;
-    if (typeof elem?.cvalue === 'object') return Summ(elem.cvalue);
-    return elem?.cvalue;
+    if (typeof elem?.cValue === 'undefined') return 2021;
+    if (typeof elem.cValue === 'string') return +elem.cValue;
+    if (typeof elem.cValue === 'object') return Summ(elem.cValue);
+    return elem.cValue;
   });
 
   let sum = 0;
@@ -22,16 +21,16 @@ function Summ(a: BigObject): number {
 }
 
 const values = {
-  h: { cvalue: 2 },
-  e: { cvalue: 3 },
-  L: { cvalue: 5 },
-  o: { cvalue: '0' },
-  world: { cvalue: { yay: { cvalue: '100' } } },
+  h: { cValue: 2 },
+  e: { cValue: 3 },
+  L: { cValue: 5 },
+  o: { cValue: '0' },
+  world: { cValue: { yay: { cValue: '100' } } },
 };
 
-const undefindValue = {
-  o: { cvalue: undefined },
+const undefinedValue = {
+  o: undefined
 };
 
 console.log(Summ(values));
-console.log(`Heppy ${Summ(undefindValue)} Year`);
+console.log(`Happy ${Summ(undefinedValue)} Year`);
