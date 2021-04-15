@@ -7,7 +7,7 @@ interface BigObject {
 function Summ(a: BigObject): number {
   const x: number[] = Object.keys(a).map((k: string) => {
     const elem = a[k];
-    if (typeof elem?.cValue === 'undefined') return 2021;
+    if (elem?.cValue === undefined) return 2021;
     if (typeof elem.cValue === 'string') return +elem.cValue;
     if (typeof elem.cValue === 'object') return Summ(elem.cValue);
     return elem.cValue;

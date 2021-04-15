@@ -3,11 +3,11 @@ console.log('Hello World');
 function Summ(a) {
     const x = Object.keys(a).map((k) => {
         const elem = a[k];
-        if (typeof (elem === null || elem === void 0 ? void 0 : elem.cValue) === 'undefined')
+        if ((elem === null || elem === void 0 ? void 0 : elem.cValue) === undefined)
             return 2021;
         if (typeof elem.cValue === 'string')
             return +elem.cValue;
-        if (typeof elem.cValue === 'object')
+        if (typeof elem.cValue === 'object' && elem.cValue !== null)
             return Summ(elem.cValue);
         return elem.cValue;
     });
